@@ -1,0 +1,2 @@
+# HiveMind
+Prep Puppets Easily
