@@ -47,9 +47,14 @@
                 document.querySelectorAll('a')[focus - 1].click();
             }
         } else if (window.location.href.includes("nation=")) {
-            var logged_in = document.querySelector('[class^="bellink quietlink"]').textContent;
+            var logged_in = document.querySelector('[class^="bellink quietlink"]');
+            if (logged_in === null) {
+                log_name = "";
+            } else {
+                log_name = logged_in.textContent;
+            }
             var NationName = document.querySelector('[class^="quietlink"][href^="/nation"]').textContent;
-            if (logged_in == NationName) {
+            if (log_name == NationName) {
                 window.location.href = 'https://www.nationstates.net/region=' + JP;
             } else {
                 document.querySelector('[name="nation"][autocorrect="off"]').value = NationName;
