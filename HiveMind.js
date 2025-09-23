@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         HiveMind
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       DragoE
 // @match        https://www.nationstates.net/*
@@ -48,6 +48,7 @@
             }
         } else if (window.location.href.includes("nation=")) {
             var logged_in = document.querySelector('[class^="bellink quietlink"]');
+            var log_name = "";
             if (logged_in === null) {
                 log_name = "";
             } else {
